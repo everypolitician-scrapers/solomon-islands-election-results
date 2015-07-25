@@ -31,6 +31,7 @@ def scrape_list(url)
       term: '10',
       source: url,
     }
+    next if data[:name].empty?
     ScraperWiki.save_sqlite([:name, :term], data)
   end
 end
